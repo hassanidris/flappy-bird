@@ -8,9 +8,9 @@ This repository contains the collaborative effort of Petra, Oliver, and Hassen t
 
 ## Contributors
 
+- Hassen Ahmed [@HassenGitHub](https://github.com/hassanidris)
 - Petra Milicevic [@PetraGitHub](https://github.com/PetraaM)
 - Oliver Redondo [@OliverGitHub](https://github.com/oliverredondo)
-- Hassen Ahmed [@HassenGitHub](https://github.com/hassanidris)
 
 ## Features
 
