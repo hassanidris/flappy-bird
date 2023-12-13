@@ -1,0 +1,399 @@
+@import url(https://fonts.googleapis.com/css?family=Silkscreen:regular,700);
+body {
+  display: flex;
+  margin: 0;
+  font-family: Silkscreen, Arial, Helvetica, sans-serif;
+  background-color: #fb8a28;
+}
+
+.container {
+  display: block;
+  width: 1024px;
+  height: 768px;
+  position: absolute;
+  left: 50%;
+  top: 55%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+}
+
+.title {
+  font-size: 5rem;
+  margin-bottom: 20px;
+  /* Fallback: Set a background color. */
+  background-color: salmon;
+
+  /* Create the gradient. */
+  background-image: linear-gradient(180deg, #fa8072, #af4261);
+
+  /* Set the background size and repeat properties. */
+  background-size: 100%;
+  background-repeat: repeat;
+
+  /* Use the text as a mask for the background. */
+  /* This will show the gradient as a text color rather than element bg. */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+}
+
+.text {
+  position: absolute;
+  z-index: 2;
+  font-size: 2rem;
+  left: 160px;
+  /* top: 5%; */
+}
+
+.game {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* Background - SKY */
+
+.sky {
+  background-image: url("./images/Day\ Sky.png");
+  width: 100%;
+  height: 640px;
+  position: absolute;
+  background-repeat: repeat;
+  background-position: 0%;
+  background-size: cover;
+}
+
+.sky-moving {
+  background-image: url("./images/Day\ Sky.png");
+  width: 100%;
+  height: 640px;
+  position: absolute;
+  animation: slideleft 1500s infinite linear;
+  -webkit-animation: slideleft 1500s infinite linear;
+  background-size: cover;
+  /* width: 100%; */
+}
+
+/* Background - GROUND */
+
+.ground-container {
+  width: 100%;
+  height: 150px;
+  position: absolute;
+  bottom: 0;
+}
+
+.ground {
+  background-image: url("./images/bottom-background.png");
+  width: 100%;
+  height: 150px;
+  position: absolute;
+  z-index: 1;
+}
+
+.ground-moving {
+  width: 100%;
+  height: 150px;
+  position: absolute;
+  bottom: 0;
+  background-image: url("./images/bottom-background.png");
+  background-repeat: repeat-x;
+  animation: slideright 800s infinite linear;
+  -webkit-animation: slideright 800s infinite linear;
+  z-index: +1;
+}
+
+/* Player avatars */
+
+.bird {
+  background-image: url("./images/bird1.png");
+  position: absolute;
+  width: 60px;
+  height: 45px;
+  left: 220px;
+  bottom: 100px;
+}
+
+.hassan {
+  background-image: url("./images/hassan.png");
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  left: 220px;
+  bottom: 100px;
+}
+
+.pikachu {
+  background-image: url("./images/pikachu.gif");
+  position: absolute;
+  width: 62px;
+  height: 38px;
+  left: 220px;
+  bottom: 100px;
+}
+
+.nyan {
+  background-image: url("./images/nyan.gif");
+  position: absolute;
+  width: 60px;
+  height: 46px;
+  left: 220px;
+  bottom: 100px;
+}
+
+.avatar-box {
+  display: flex;
+  justify-content: space-around;
+  margin-top: -20px;
+  margin-bottom: -10px;
+  background-color: white;
+  border-radius: 20px;
+  padding: 5px;
+}
+
+.avatar {
+  display: inline-block;
+  height: 1.5rem;
+  width: auto;
+}
+
+.vertical-line {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: lighter;
+  color: #505050;
+}
+
+.invincible {
+  opacity: 0.5;
+  transform: scale(1.2);
+  animation: blink 0.5s infinite;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* OBSTACLES */
+
+/* Fork and knife */
+
+.obstacleFork {
+  background-image: url("./images/flappybird-fork.png");
+  width: 60px;
+  height: 300px;
+  position: absolute;
+}
+
+.topObstacleFork {
+  background-image: url("./images/flappybird-fork.png");
+  transform: rotate(180deg);
+  width: 60px;
+  height: 300px;
+  position: absolute;
+}
+
+.obstacleKnife {
+  background-image: url("./images/flappybird-knife.png");
+  width: 60px;
+  height: 300px;
+  position: absolute;
+}
+
+.topObstacleKnife {
+  background-image: url("./images/flappybird-knife.png");
+  transform: rotate(180deg);
+  width: 60px;
+  height: 300px;
+  position: absolute;
+}
+
+/* People */
+
+.obstacleCoffee {
+  background-image: url("./images/coffee.png");
+  width: 163px;
+  height: 300px;
+  position: absolute;
+}
+
+.obstacleKhadija {
+  background-image: url("./images/khadija.png");
+  width: 116px;
+  height: 300px;
+  position: absolute;
+}
+
+.obstacleEskilCool {
+  background-image: url("./images/eskilCool.png");
+  width: 120px;
+  height: 300px;
+  position: absolute;
+}
+
+.obstacleEskilBreak {
+  background-image: url("./images/eskilBreak.gif");
+  width: 120px;
+  height: 300px;
+  position: absolute;
+}
+
+.obstacleSmoke {
+  background-image: url("./images/smoke.gif");
+  width: 122px;
+  height: 300px;
+  position: absolute;
+}
+
+/* Pipes */
+
+.obstaclePipe {
+  background-image: url("./images/flappybird-pipe.png");
+  width: 60px;
+  height: 300px;
+  position: absolute;
+}
+
+.topObstaclePipe {
+  background-image: url("./images/flappybird-pipe.png");
+  transform: rotate(180deg);
+  width: 60px;
+  height: 300px;
+  position: absolute;
+}
+
+/* Salmon */
+
+.obstacleSalmon {
+  background-image: url("./images/salmon.png");
+  width: 60px;
+  height: 300px;
+  position: absolute;
+  background-repeat: no-repeat;
+}
+
+.topObstacleSalmon {
+  background-image: url("./images/salmon.png");
+  transform: rotate(180deg);
+  width: 60px;
+  height: 300px;
+  position: absolute;
+  background-repeat: no-repeat;
+}
+
+/* Make it move to the right */
+
+@keyframes slideright {
+  from {
+    background-position: 10000%;
+  }
+  to {
+    background-position: 0%;
+  }
+}
+
+@-webkit-keyframes slideright {
+  from {
+    background-position: 10000%;
+  }
+  to {
+    background-position: 0%;
+  }
+}
+
+/* Make it move to the left */
+
+@keyframes slideleft {
+  from {
+    background-position: 0%;
+  }
+  to {
+    background-position: 10000%;
+  }
+}
+
+@-webkit-keyframes slideleft {
+  from {
+    background-position: 0%;
+  }
+  to {
+    background-position: 10000%;
+  }
+}
+/*  Lives & Score Results  */
+
+.scorecontainer {
+  display: flex;
+  width: 100% !important;
+  height: 100%;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  font-size: 18px;
+  font-weight: bold;
+  z-index: 99;
+}
+
+/*  Game over popup  */
+
+.popup {
+  display: none;
+  background: hsla(0, 0%, 20%, 0.7);
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  pointer-events: none;
+  transition: opacity 0.2s;
+}
+
+.inner-popup {
+  display: block;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 999;
+  max-width: 600px;
+  min-width: 400px;
+  padding: 2rem;
+  border-radius: 5px;
+  /* min-height: 200px; */
+  background: white;
+  transform: translate(-50%, -50%);
+  pointer-events: all;
+  text-align: center;
+  transition: opacity 0.2s;
+}
+
+.pickup-line {
+  font-size: 18px;
+}
+
+.restart-button {
+  height: 50px;
+  width: calc(100% / 2 - 20px);
+  outline: none;
+  padding: 0 20px;
+  border-radius: 8px;
+  font-size: 18px;
+  border: none;
+  background: #4caf50;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.restart-button:hover {
+  transform: scale(0.97);
+  background: #65d969;
+}

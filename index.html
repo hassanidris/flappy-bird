@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Flappy Island</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <!-- Audio -->
+    <audio id="collisionSound">
+      <source
+        src="./audio/mixkit-funny-fail-low-tone-2876.wav"
+        type="audio/mp3"
+      />
+      Your browser does not support the audio tag.
+    </audio>
+    <audio id="spacebarSound">
+      <source src="./audio/mixkit-game-ball-tap-2073.wav" type="audio/mp3" />
+      Your browser does not support the audio tag.
+    </audio>
+    <!-- The game -->
+    <div class="container">
+      <div class="text" id="instructionText">
+        <audio id="okeyLetsGo">
+          <source src="./audio/okeyletsgo.mp3" type="audio/mp3" />
+          Your browser does not support the audio tag.
+        </audio>
+        <audio id="birdSound">
+          <source src="./audio/birdchirp.mp3" type="audio/mp3" />
+          Your browser does not support the audio tag.
+        </audio>
+        <audio id="pikachuSound">
+          <source src="./audio/pikachu.mp3" type="audio/mp3" />
+          Your browser does not support the audio tag.
+        </audio>
+        <audio id="nyanSound">
+          <source src="./audio/nyan.mp3" type="audio/mp3" />
+          Your browser does not support the audio tag.
+        </audio>
+        <p class="title">FLAPPY ISLAND</p>
+
+        <p>Press Player Number:</p>
+        <div class="avatar-box">
+          <span>1 - <img src="./images/bird1.png" class="avatar" /></span>
+          <span class="vertical-line">|</span>
+          <span>2 - <img src="./images/pikachu.gif" class="avatar" /></span>
+          <span class="vertical-line">|</span>
+          <span>3 - <img src="./images/nyan.gif" class="avatar" /></span>
+        </div>
+
+        <p>
+          Press &lt;S&gt; to start the game<br />
+          Press &lt;space&gt; to jump
+        </p>
+      </div>
+      <div class="game" id="gameDisplay">
+        <div class="sky-moving" id="movingSky">
+          <div id="bird" class="bird"></div>
+        </div>
+
+        <div class="ground-container">
+          <div class="scorecontainer">
+            <p id="lives">LIVES: 3</p>
+            <p id="currentScore"></p>
+            <p id="highestScore"></p>
+          </div>
+          <div class="ground-moving" id="movingGround"></div>
+        </div>
+      </div>
+    </div>
+    <div class="popup" id="gameOverPopup">
+      <div class="inner-popup">
+        <p class="pickup-line">Game Over but</p>
+        <p class="pickup-line" id="pickupLine"></p>
+        <p>PRESS <b>ENTER</b> TO RESTART THE GAME!</p>
+        <!-- <button class="restart-button" onclick="restartGame()">
+          Restart Game
+        </button> -->
+      </div>
+    </div>
+    <script src="script.js" charset="utf-8"></script>
+    <script src="api.js"></script>
+  </body>
+</html>
