@@ -210,7 +210,7 @@ function executeJump() {
   // Increase the bird's bottom position to simulate a jump
   if (birdBottom < 500) birdBottom += 50;
   birdEl.style.bottom = birdBottom + "px";
-  console.log(birdBottom);
+  // console.log(birdBottom);
 }
 
 // Function to handle user control (spacebar press for jump)
@@ -341,7 +341,7 @@ function gameOver() {
   });
   // Clear the game loop timer
   clearInterval(gameTimerId);
-  console.log("Game over");
+  // console.log("Game over");
   isGameOver = true;
 
   // Remove key event listener for user control
