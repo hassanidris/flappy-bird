@@ -300,7 +300,7 @@ function generateObstacle() {
     ) {
       // Handle collision events
       if (!isInvincible) {
-        console.log("collision", birdBottom);
+        // console.log("collision", birdBottom);
         decreaseLiveCount();
         checkRemainingLives();
         collisionSound.play();
